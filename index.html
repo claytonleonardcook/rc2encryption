@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encryption</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/node-forge@0.7.0/dist/forge.min.js"></script>
+  </head>
+  <body>
+    <h1>SHA256 -> RC2</h1>
+    <form>
+      <input id="iv" placeholder="IV" />
+      <input id="message" placeholder="Message" />
+      <input
+        type="password"
+        id="secretpassword"
+        placeholder="Secret Password"
+      />
+      <span>
+        <button type="submit" id="encrypt">Encrypt</button>
+        <button type="submit" id="decrypt">Decrypt</button>
+      </span>
+      <output class="hex"></output>
+      <output class="binary"></output>
+    </form>
+    <script src="./app.js"></script>
+  </body>
+</html>
