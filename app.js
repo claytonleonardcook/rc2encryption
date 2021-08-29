@@ -14,11 +14,12 @@ IV.addEventListener('input', (e) => {
 })
 
 ENCRYPT.addEventListener('click', (e) => {
+    e.stopPropagation();
     e.preventDefault();
 
-    const HASH = forge.md.sha256.create();
+    const HASH = forge.md.sha1.create();
     HASH.update(MESSAGE.value);
-    console.log(`${MESSAGE.value} \n -(SHA256)->\n${HASH.digest().toHex()}`);
+    console.log(`${MESSAGE.value} \n -(SHA1)->\n${HASH.digest().toHex()}`);
 
     const CIPHER = forge.rc2.createEncryptionCipher(SECRETPASSWORD.value);
     CIPHER.start(iv);
@@ -31,6 +32,7 @@ ENCRYPT.addEventListener('click', (e) => {
 })
 
 DECRYPT.addEventListener('click', (e) => {
+    e.stopPropagation();
     e.preventDefault();
 
     const CIPHER = forge.rc2.createDecryptionCipher(SECRETPASSWORD.value);
