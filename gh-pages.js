@@ -13,3 +13,4 @@ ghpages.publish(
     () => {
         console.log('Deploy Complete!')
     }
+)
