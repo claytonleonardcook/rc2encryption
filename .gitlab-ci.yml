@@ -1,0 +1,11 @@
+image: node:latest
+  pages:
+   stage: deploy
+    script:
+      - yarn install
+      - yarn build
+    artifacts:
+      paths:
+        - public
+    only:
+      - master
